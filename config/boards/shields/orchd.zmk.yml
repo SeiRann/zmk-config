@@ -1,0 +1,12 @@
+file_format: "1"
+id: orchd
+name: ORCHD
+type: shield
+url: https://github.com/SeiRann/zmk-config
+requires: [pro_micro]
+features:
+  - keys
+  - underglow
+siblings:
+  - orchd_left
+  - orchd_right
