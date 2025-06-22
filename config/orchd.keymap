@@ -1,0 +1,102 @@
+/*
+ * Copyright (c) 2020 The ZMK Contributors
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
+
+/ {
+        keymap {
+                compatible = "zmk,keymap";
+
+                default_layer {
+// -----------------------------------------------------------------------------------------
+// |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BSPC |
+// | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
+// | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | ESC  |
+//                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
+                        bindings = <
+    &kp TAB  &kp Q  &kp W  &kp E  &kp R  &kp T          &kp Y &kp U &kp I &kp O &kp P &kp BSPC
+    &kp CAPS &kp A &kp S &kp D &kp F &kp G              &kp H &kp J &kp K &kp L &kp SEMI &kp RET
+    &kp LSHIFT &kp Z &kp X &kp C &kp V &kp B            &kp N &kp M &kp COMMA &kp DOT &kp FSLH &kp BSLH
+    &kp LCTRL &kp LGUI &kp LALT &kp SPACE               &kp SPACE &tog 5 &kp RGUI &kp RCTRL
+                       &mo 1 &mo 2             &mo 3 &mo 4
+                        >;
+                };
+//                 first_layer {
+// // -----------------------------------------------------------------------------------------
+// // |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BSPC |
+// // | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
+// // | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | ESC  |
+// //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
+//                         bindings = <
+//     &kp TAB  &kp Q  &kp W  &kp E  &kp R  &kp T          &kp Y &kp U &kp I &kp O &kp P &kp BSPC
+//     &kp CAPS &kp A &kp S &kp D &kp F &kp G              &kp H &kp J &kp K &kp L &kp SEMI &kp RET
+//     &kp LSHIFT &kp Z &kp X &kp C &kp V &kp B            &kp N &kp M &kp COMMA &kp DOT &kp FSLH &kp BSLH
+//     &kp LCTRL &kp LGUI &kp LALT &kp SPACE               &kp SPACE &kp mo5 &kp RGUI &kp RCTRL
+//                        &mo 1 &mo 2             &mo 3 &mo 4
+//                         >;
+//                 };
+//                 second_layer {
+// // -----------------------------------------------------------------------------------------
+// // |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BSPC |
+// // | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
+// // | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | ESC  |
+// //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
+//                         bindings = <
+//     &kp TAB  &kp Q  &kp W  &kp E  &kp R  &kp T          &kp Y &kp U &kp I &kp O &kp P &kp BSPC
+//     &kp CAPS &kp A &kp S &kp D &kp F &kp G              &kp H &kp J &kp K &kp L &kp SEMI &kp RET
+//     &kp LSHIFT &kp Z &kp X &kp C &kp V &kp B            &kp N &kp M &kp COMMA &kp DOT &kp FSLH &kp BSLH
+//     &kp LCTRL &kp LGUI &kp LALT &kp SPACE               &kp SPACE &kp mo5 &kp RGUI &kp RCTRL
+//                        &mo 1 &mo 2             &mo 3 &mo 4
+//                         >;
+//                 };
+//                 third_layer {
+// // -----------------------------------------------------------------------------------------
+// // |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BSPC |
+// // | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
+// // | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | ESC  |
+// //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
+//                         bindings = <
+//     &kp TAB  &kp Q  &kp W  &kp E  &kp R  &kp T          &kp Y &kp U &kp I &kp O &kp P &kp BSPC
+//     &kp CAPS &kp A &kp S &kp D &kp F &kp G              &kp H &kp J &kp K &kp L &kp SEMI &kp RET
+//     &kp LSHIFT &kp Z &kp X &kp C &kp V &kp B            &kp N &kp M &kp COMMA &kp DOT &kp FSLH &kp BSLH
+//     &kp LCTRL &kp LGUI &kp LALT &kp SPACE               &kp SPACE &kp mo5 &kp RGUI &kp RCTRL
+//                        &mo 1 &mo 2             &mo 3 &mo 4
+//                         >;
+//                 };
+//                 forth_layer {
+// // -----------------------------------------------------------------------------------------
+// // |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BSPC |
+// // | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
+// // | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | ESC  |
+// //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
+//                         bindings = <
+//     &kp TAB  &kp Q  &kp W  &kp E  &kp R  &kp T          &kp Y &kp U &kp I &kp O &kp P &kp BSPC
+//     &kp CAPS &kp A &kp S &kp D &kp F &kp G              &kp H &kp J &kp K &kp L &kp SEMI &kp RET
+//     &kp LSHIFT &kp Z &kp X &kp C &kp V &kp B            &kp N &kp M &kp COMMA &kp DOT &kp FSLH &kp BSLH
+//     &kp LCTRL &kp LGUI &kp LALT &kp SPACE               &kp SPACE &kp mo5 &kp RGUI &kp RCTRL
+//                        &mo 1 &mo 2             &mo 3 &mo 4
+//                         >;
+//                 };
+//                 numpad {
+// // -----------------------------------------------------------------------------------------
+// // |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BSPC |
+// // | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
+// // | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | ESC  |
+// //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
+//                         bindings = <
+//     &kp TAB  &kp Q  &kp W  &kp E  &kp R  &kp T          &kp Y &kp U &kp I &kp O &kp P &kp BSPC
+//     &kp CAPS &kp A &kp S &kp D &kp F &kp G              &kp H &kp J &kp K &kp L &kp SEMI &kp RET
+//     &kp LSHIFT &kp Z &kp X &kp C &kp V &kp B            &kp N &kp M &kp COMMA &kp DOT &kp FSLH &kp BSLH
+//     &kp LCTRL &kp LGUI &kp LALT &kp SPACE               &kp SPACE &kp mo5 &kp RGUI &kp RCTRL
+//                        &mo 1 &mo 2             &mo 3 &mo 4
+//                         >;
+//                 };
+                
+                
+        };
+};
